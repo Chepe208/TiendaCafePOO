@@ -105,5 +105,32 @@ public class TiendaCafe {
         // Recalculamos el precio total con la nueva cantidad
         System.out.println("Nuevo valor total de este producto: $" + 
         String.format("%,.0f", cafe2.calcularPrecioTotal()) + " COP\n");
+
+        System.out.println("  Descuentos en los precios del Cafe            ");
+        
+        System.out.println("¡Aplicando descuentos de temporada!\n");
+        
+        // Se le aplican los descuentos a los tres cafés
+        System.out.println("DESCUENTO 1:");
+        System.out.println("             ");
+        cafe1.aplicarDescuento(15.0);
+        System.out.println("             ");
+        
+        System.out.println("DESCUENTO 2:");
+        System.out.println("             ");
+        cafe2.aplicarDescuento(10.0);
+        System.out.println("             ");
+        
+        System.out.println("DESCUENTO 3:");
+        System.out.println("             ");
+        cafe3.aplicarDescuento(150.0);  // Descuento inválido para mostrar validación
+        System.out.println("             ");
+        
+        System.out.println("DESCUENTO 4:");
+        System.out.println("             ");
+        cafe3.aplicarDescuento(12.0);  // Descuento válido
+        System.out.println("             ");
+        
+        System.out.println(" Todos los descuentos válidos han sido procesados ");
     }
 }
