@@ -69,4 +69,33 @@ public class Cafe {
     public void setRegion(String nuevaRegion) {
         this.region = nuevaRegion;
     }
+
+    public void aplicarDescuento(double porcentaje) {
+        // Validación del porcentaje
+        if (porcentaje > 0 && porcentaje <= 100) {
+            
+            // Guardamos el precio original
+            double precioAnterior = this.precioPorKilo;
+            
+            // Calculamos el descuento
+            double descuento = this.precioPorKilo * (porcentaje / 100);
+            
+            // Aplicamos el descuento
+            this.precioPorKilo = this.precioPorKilo - descuento;
+            
+            // Mostramos confirmación
+            System.out.println(" El Descuento fue Aplicado");
+            System.out.println(" Producto: " + this.nombre);
+            System.out.println(" Porcentaje de descuento: " + porcentaje + "%");
+            System.out.println(" Precio anterior: $" + String.format("%,.0f", precioAnterior) + " COP");
+            System.out.println(" Valor del descuento: $" + String.format("%,.0f", descuento) + " COP");
+            System.out.println(" Precio nuevo: $" + String.format("%,.0f", this.precioPorKilo) + " COP");
+            
+        } else {
+            // Error si el porcentaje no es válido
+            System.out.println(" ERROR: Porcentaje de descuento invalido");
+            System.out.println("  El porcentaje debe estar entre 0 y 100");
+            System.out.println("  Valor recibido: " + porcentaje);
+        }
+    }
 }
